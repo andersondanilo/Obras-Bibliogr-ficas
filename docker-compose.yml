@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  client:
+    build: ./client
+    volumes:
+      - ./client/code:/code
+    ports:
+      - 8080:8080
+  api:
+    build: ./api
+    volumes:
+      - ./api/code:/code
+      - ./api/data/.gem:/home/app/.gem
+      - ./api/data/.bundle:/home/app/.bundle
+      - ./api/data/bundle:/usr/local/bundle
+    ports:
+      - 3000:3000
