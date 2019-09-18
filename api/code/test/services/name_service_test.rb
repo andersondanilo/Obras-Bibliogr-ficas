@@ -22,4 +22,8 @@ class NameServiceTest < ActiveSupport::TestCase
     assert_equal('SILVA NETO, Joao', @service.convert_to_author_name('Joao Silva Neto'))
     assert_equal('NETO, Joao', @service.convert_to_author_name('Joao Neto'))
   end
+
+  test "nil" do
+    assert_equal('', @service.convert_to_author_name(nil))
+  end
 end

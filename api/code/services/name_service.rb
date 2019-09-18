@@ -1,7 +1,7 @@
 class NameService
   def convert_to_author_name(name)
-    pieces = name.split(' ')
-    last_names = pieces.pop.upcase
+    pieces = name.to_s.split(' ')
+    last_names = pieces.pop.to_s.upcase
     
     if need_another_last_name?(last_names) && pieces.length > 1
       last_names = pieces.pop.upcase + ' ' + last_names
