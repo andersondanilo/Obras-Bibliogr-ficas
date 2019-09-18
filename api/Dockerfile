@@ -1,4 +1,4 @@
-FROM ruby:2.5
+FROM ruby:2.5.5
 
 RUN mkdir /code
 WORKDIR /code
